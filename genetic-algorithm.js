@@ -304,6 +304,7 @@ function fitness(solution) {   //###### solution argument from GA
     let next_step;
 
     // next_step is the next chromosome in gene
+    //TODO: maybe while loop??
 
     for (next_step = 0; next_step < 100; next_step++) {  // larger than solution set so that heuristic keeps solving even if we are out of heuristics
 
@@ -329,6 +330,25 @@ function fitness(solution) {   //###### solution argument from GA
 
         final_score_individual += step_score
     }
+
+    // while ((next_step > solution.length)) && this.areThereAnymoreNeighboursAvailable()) {  // larger than solution set so that heuristic keeps solving even if we are out of heuristics
+
+    //     if (!this.areThereAnymoreNeighboursAvailable() || boardEmpty()) {
+    //         this.gameFinished('BOARD_EMPTY or NO_MORE_NEIGHBOURS');
+    //         solution.slice(0, next_step);
+    //         console.log("End of Game"); //& delete all members remaining from the solution array..... which method to use for that?
+    //         break; 
+    //     }
+    //     else if () {
+    //         solution.push(getRandomInt(1, 19)); // append more heuristics to solve if game not ended
+    //     }
+
+    //     console.log('Heuristic being applied is ' + String(solution[next_step]));
+    //     heuristic_lookup[solution[next_step]];   // ## invoke heuristic, step_score and updateTiles and also choose bubbleID
+    //     final_score_individual += step_score
+
+
+    // }
     return final_score_individual;
 }
 
