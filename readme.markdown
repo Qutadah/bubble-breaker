@@ -8,5 +8,5 @@ A Javascript Clone of the Windows Mobile Evergreen, coupled with a Genetic Algor
 
 ## REQUIREMENTS:
 
-1- Google Chrome or Live-Server on Node.js or from chrome.
+1- Google Chrome or Live-Server on Node.js or from chrome. \\
 2- JavaScript compiler and code editor (VS-code)
