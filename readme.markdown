@@ -30,9 +30,9 @@ var add2 = function(number) {
 
 ## Research papers:
 * This algorithm is based on the research papers of:
-1. Salcedo [Salcedo-Sanz2014_Article_AnEvolutionary-basedHyper-heur.pdf](https://github.com/Qutadah/bubble-breaker-with-genetic-algorithm-low-level-heuristics/files/8042061/Salcedo-Sanz2014_Article_AnEvolutionary-basedHyper-heur.pdf)
+1. [Salcedo-Sanz2014_Article_AnEvolutionary-basedHyper-heur.pdf](https://github.com/Qutadah/bubble-breaker-with-genetic-algorithm-low-level-heuristics/files/8042061/Salcedo-Sanz2014_Article_AnEvolutionary-basedHyper-heur.pdf)
 
-2. [EduSoftware-Bubble-Breaker](https://onlinelibrary.wiley.com/doi/full/10.1002/cae.21597) [Paper_2014_An Educational Software Tool to Teach Hyper-heuristics to engineering students based on the bubble breaker puzzle.pdf](https://github.com/Qutadah/bubble-breaker-with-genetic-algorithm-low-level-heuristics/files/8042062/Paper_2014_An.Educational.Software.Tool.to.Teach.Hyper-heuristics.to.engineering.students.based.on.the.bubble.breaker.puzzle.pdf)
+2. (https://onlinelibrary.wiley.com/doi/full/10.1002/cae.21597) [Paper_2014_An Educational Software Tool to Teach Hyper-heuristics to engineering students based on the bubble breaker puzzle.pdf](https://github.com/Qutadah/bubble-breaker-with-genetic-algorithm-low-level-heuristics/files/8042062/Paper_2014_An.Educational.Software.Tool.to.Teach.Hyper-heuristics.to.engineering.students.based.on.the.bubble.breaker.puzzle.pdf)
   
   ```tex
   @article{salcedo2015educational,
