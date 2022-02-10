@@ -304,10 +304,11 @@ function fitness(solution) {   //###### solution argument from GA
     let next_step;
 
     
+
     // next_step is the next chromosome in gene
     //TODO: maybe while loop??
 
-    for (next_step = 0; next_step < 100; next_step++) {  // larger than solution set so that heuristic keeps solving even if we are out of heuristics
+    for (next_step = 0; next_step < 100; next_step++) {  // NOTE: larger than solution set so that heuristic keeps solving even if we are out of heuristics
 
         if (boardEmpty) {
             this.gameFinished('BOARD_EMPTY');
