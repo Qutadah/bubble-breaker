@@ -6,7 +6,7 @@ A Javascript Clone of the Windows Mobile Evergreen, coupled with a Genetic Algor
 [Play the Demo here](http://blog.ginader.de/dev/bubble-breaker/index.php)
 
 
-## REQUIREMENTS:
+## Requirements:
 
 * Google Chrome or Live-Server on Node.js or from chrome. \
 * JavaScript compiler and code editor (VS-code)
@@ -21,5 +21,29 @@ var add2 = function(number) {
 [services-GA-code](https://github.com/Qutadah/hyperheuristics-evolutionary-algorithms)
 
 
-## Known issues:
+## Known Issues:
 * Genetic Algorithm and search functions are not yet fully implemented. (does not work yet)
+
+
+## Bugs:
+-
+
+## Research papers:
+* This algorithm is based on the research papers of:
+1. Salcedo 
+2. [EduSoftware-Bubble-Breaker](https://onlinelibrary.wiley.com/doi/full/10.1002/cae.21597)
+  
+  ```tex
+  @article{salcedo2015educational,
+  title={An educational software tool to teach hyper-heuristics to engineering students based on the bubble breaker puzzle},
+  author={Salcedo-Sanz, Sancho and Jim{\'e}nez-Fern{\'a}ndez, Silvia and Mat{\'\i}as-Rom{\'a}n, JM and Portilla-Figueras, Jos{\'e} Antonio},
+  journal={Computer Applications in Engineering Education},
+  volume={23},
+  number={2},
+  pages={277--285},
+  year={2015},
+  publisher={Wiley Online Library}
+  }
+  ```
+  
+  
