@@ -303,6 +303,7 @@ function fitness(solution) {   //###### solution argument from GA
     let final_score_individual = 0;
     let next_step;
 
+    
     // next_step is the next chromosome in gene
     //TODO: maybe while loop??
 
