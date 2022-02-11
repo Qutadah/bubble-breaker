@@ -17,6 +17,7 @@ var add2 = function(number) {
 }
 ```
 
+## Other genetic algorithm related repositiories:
 
 [services-GA-code](https://github.com/Qutadah/hyperheuristics-evolutionary-algorithms)
 
