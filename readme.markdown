@@ -26,9 +26,6 @@ var add2 = function(number) {
 * Genetic Algorithm and search functions are not yet fully implemented. (does not work yet)
 
 
-## Bugs:
--
-
 ## Research papers:
 * This algorithm is based on the research papers of:
 1. [Salcedo-Sanz2014_Article_AnEvolutionary-basedHyper-heur.pdf](https://github.com/Qutadah/bubble-breaker-with-genetic-algorithm-low-level-heuristics/files/8042061/Salcedo-Sanz2014_Article_AnEvolutionary-basedHyper-heur.pdf)
