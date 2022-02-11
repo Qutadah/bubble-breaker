@@ -1,4 +1,5 @@
 // TODO: not working: user promt to enter first individual, now just random start function is better.
+
 function start() {
   solution = Array.from({ length: 50 }, () => Math.floor(Math.random() * 19));
   console.log(solution);
@@ -9,8 +10,8 @@ function start() {
 
 var solution = start();
 var index = 0;
-var btn = document.getElementById("myBtn");
-var text = document.getElementById("nextHeuristic");
+var btn = document.getElementById('myBtn');
+var text = document.getElementById('nextHeuristic');
 
 function changeText() {
   for (index = 0; i < solution.length; index++) {
@@ -69,7 +70,7 @@ function fitness(solution) {
     // if end of game console.log("End of Game") & delete all members remaining from the solution array..... which method to use for that?
 
     //else
-    console.log("Heuristic being applied is " + String(solution[next_step]));
+    console.log('Heuristic being applied is ' + String(solution[next_step]));
 
     // use the heuristic_lookup object to execute the current chromosome or heuristic, and click the bubble (implemented inside
     // heuristic functions)

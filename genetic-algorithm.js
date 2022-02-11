@@ -26,25 +26,25 @@ console.log(solution);
 //######################### Heuristic function mapping with the gene (chromosomes array) - heuristic-number ######################
 
 let heuristic_lookup = {
-  1: eval("H01(puzzle_layout)"),
-  2: eval("H02(puzzle_layout)"),
-  3: eval("H03(puzzle_layout)"),
-  4: eval("H04(puzzle_layout)"),
-  5: eval("H05(puzzle_layout)"),
-  6: eval("H06(puzzle_layout)"),
-  7: eval("H07(puzzle_layout)"),
-  8: eval("H08(puzzle_layout)"),
-  9: eval("H09(puzzle_layout)"),
-  10: eval("H10(puzzle_layout)"),
-  11: eval("H11(puzzle_layout)"),
-  12: eval("H12(puzzle_layout)"),
-  13: eval("H13(puzzle_layout)"),
-  14: eval("H14(puzzle_layout)"),
-  15: eval("H15(puzzle_layout)"),
-  16: eval("H16(puzzle_layout)"),
-  17: eval("H17(puzzle_layout)"),
-  18: eval("H18(puzzle_layout)"),
-  19: eval("H19(puzzle_layout)"),
+  1: eval('H01(puzzle_layout)'),
+  2: eval('H02(puzzle_layout)'),
+  3: eval('H03(puzzle_layout)'),
+  4: eval('H04(puzzle_layout)'),
+  5: eval('H05(puzzle_layout)'),
+  6: eval('H06(puzzle_layout)'),
+  7: eval('H07(puzzle_layout)'),
+  8: eval('H08(puzzle_layout)'),
+  9: eval('H09(puzzle_layout)'),
+  10: eval('H10(puzzle_layout)'),
+  11: eval('H11(puzzle_layout)'),
+  12: eval('H12(puzzle_layout)'),
+  13: eval('H13(puzzle_layout)'),
+  14: eval('H14(puzzle_layout)'),
+  15: eval('H15(puzzle_layout)'),
+  16: eval('H16(puzzle_layout)'),
+  17: eval('H17(puzzle_layout)'),
+  18: eval('H18(puzzle_layout)'),
+  19: eval('H19(puzzle_layout)'),
 };
 
 // #####################################################################################################################################################################
@@ -65,7 +65,7 @@ function fitness(solution) {
 
   for (next_step = 0; next_step < solution.length; next_step++) {
     // NOTE: larger than
-    console.log("Heuristic being applied is " + String(solution[next_step]));
+    console.log('Heuristic being applied is ' + String(solution[next_step]));
     console.log(`It's score is ${step_score}`);
     heuristic_lookup[solution[next_step]];
     final_score_individual += step_score;
@@ -238,12 +238,12 @@ function genetic_algorithm(
     for (i = 0; i < population.length; i++) {
       costs.push([fitness_function(population[i]), population[i]]); // define costs array of fitness and individuals in the population of X solutions.
       costs.sort(); // TODO: can it sort list of fitness and individual ascending? [(2995.471957007981, [3, 2, 2, 2, 4, 0, 0, 2, 1, 4, 4, 4, 4, 0, 2, 1, 3, 1, 3, 0, 0])
-      console.log("costs normal", costs);
+      console.log('costs normal', costs);
       costs.reverse(); // maximum---- individual was in costs too
-      console.log("costs reversed ", costs);
+      console.log('costs reversed ', costs);
     }
   }
-  console.log("highest score for individual in generation", costs[0][0]);
+  console.log('highest score for individual in generation', costs[0][0]);
 
   // best_individual_in_generation.append(costs[0][0])  ## these 2 lines for vibration plot.
   // generation.append(_)
@@ -252,10 +252,10 @@ function genetic_algorithm(
     ordered_individuals.push(costs[i][1]); // individuals but orderened array.
   }
 
-  console.log("ordered individuals", ordered_individuals);
+  console.log('ordered individuals', ordered_individuals);
   population = ordered_individuals.slice(0, number_elitism); // extract the ordered individuals: first number_elitism of the population
 
-  console.log("population", population);
+  console.log('population', population);
   while (population.length < population_size) {
     if (Math.random() < probability_mutation) {
       let m;

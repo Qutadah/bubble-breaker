@@ -62,7 +62,7 @@ body {
   text-align: center;
   padding: 2px;
 }
-#bubble-breaker div.active {
+#bubble-breaker div.active {    /* NOTE: selectors used */
   display: block;
 }
 #bubble-breaker .score {
