@@ -86,36 +86,41 @@
       };
       bubbleBreaker.init();
     </script>
-    <div>
+    <div class="start-div">
       <h2>Solve game !</h2>
-      <p id="demo">
+      <p id="start-guess">
         The puzzle will be solved according to the following heuristic
       </p>   
       <button
         type="button"
-        onclick='document.getElementById("demo").innerHTML = solution'>Start!
+        onclick='document.getElementById("start-guess").innerHTML = solution'>Start!
       </button>
     </div>
-    <div>
-      <h2>Current Heuristic !</h2>    
-      <p id="nextHeuristic">
-        current heuristic is:
+    <div class="next-heuristic-div">
+      <h2>Applied Heuristic !</h2>    
+      <p id="applied-heuristic">
+        applied heuristic is:
+      </p>
+      <div class="number">12</div>
+      <h2>Next Heuristic !</h2>    
+      <p id="next-heuristic">
+        next heuristic is:
       </p>
       <button
         type="button"
-        id="nextHeuristic-button"
-        onclick='document.getElementById("nextHeuristic-button").innerHTML = changeText()'> Next heuristic!
+        id="next-heuristic-button"
+        onclick='document.getElementById("next-heuristic-button").innerHTML = changeText()'> Next heuristic!
       </button>
       </div>
-      <div>
+      <div class="ga-div">
         <h2>Genetic Algorithm!</h2>
-        <p id="run-GA">
+        <p id="run-ga">
           Run Genetic-Algorithm:
         </p>
         <button class="run-button"
         type="button"
         id="ga-button"
-        onclick='document.getElementById("run-GA").innerHTML = genetic_algorithm(domain,
+        onclick='document.getElementById("run-ga").innerHTML = genetic_algorithm(domain,
         fitness_function,
         population_size = 5,
         STEP,
