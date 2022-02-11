@@ -1,9 +1,9 @@
 // TODO: why is this piece of code not working!
 
-var solution = start();
-var index = 0;
-var btn = document.getElementById('myBtn');
-var text = document.getElementById('nextHeuristic');
+let solution = start();
+let index = 0;
+let btn = document.getElementById('myBtn');
+let text = document.getElementById('nextHeuristic-button');
 
 function changeText() {
   for (index = 0; i < solution.length; index++) {
@@ -13,4 +13,4 @@ function changeText() {
 
 //###########################################################################
 
-console.log(document.querySelector(.'next').textContent);
+// console.log((document.querySelector('.next').textContent = 'What!'));

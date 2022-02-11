@@ -13,9 +13,9 @@
     <script src="yahoo-dom-event.js" type="text/javascript"></script>
     <!--<script type="text/javascript" src="http://yui.yahooapis.com/2.4.1/build/yahoo-dom-event/yahoo-dom-event.js"></script>-->
     <script src="bubble-breaker.js" type="text/javascript"></script>
-    <script src="buttons-genetic.js" type="text/javascript"></script>
     <script src="genetic-algorithm.js" type="text/javascript"></script>
-    <script type="text/javascript">
+    <script src="buttons-genetic.js" type="text/javascript"></script>
+<script type="text/javascript">
       bubbleBreaker = new YAHOO.GINADER.BubbleBreaker({
         moduleId: 'bubble-breaker',
         size: {
@@ -84,50 +84,57 @@
         bubbleBreaker.onFinish.subscribe(playFinishSound, this, true);
         bubbleBreaker.onEpicWin.subscribe(playEpicWinSound, this, true);
       };
-      // */
-      bubbleBreaker.init();
-      bubbleBreaker.init();
       bubbleBreaker.init();
     </script>
-
-    <h2>Solve game !</h2>
-
-    <p id="demo">
-      The puzzle will be solved according to the following heuristic
-    </p>
-    <button
-      type="button"
-      onclick='document.getElementById("demo").innerHTML = solution'
-    >
-      Start!
-    </button>
-
-    <!--this is a clicking event, lookup function is called and then run ...TODO: define heursitic search functions.-->
-
-    <h2>Current Heuristic !</h2>
-
-    <p id="nextHeuristic">current heuristic is:</p>
-    <button
-      class="next"
-      type="button"
-      id="myBtn"
-      onclick='document.getElementById("nextHeuristic").innerHTML = 
-      
-    >
-      Next heuristic!
-    </button>
-
-    <!--this is a comment tag-->
-
-    <!--document.getElementById("demo").innerHTML = "input";-->
-
-    <!--
-
-	<button type="button" onclick='document.getElementById("nextHeuristic").innerHTML = nextLLheuristic; while x < solution.length'>Next Heuristic !</button> <!--TODO: i need nextLLHeuristic to loop till the end 
+    <div>
+      <h2>Solve game !</h2>
+      <p id="demo">
+        The puzzle will be solved according to the following heuristic
+      </p>   
+      <button
+        type="button"
+        onclick='document.getElementById("demo").innerHTML = solution'>Start!
+      </button>
+    </div>
+    <div>
+      <h2>Current Heuristic !</h2>    
+      <p id="nextHeuristic">
+        current heuristic is:
+      </p>
+      <button
+        type="button"
+        id="nextHeuristic-button"
+        onclick='document.getElementById("nextHeuristic-button").innerHTML = changeText()'> Next heuristic!
+      </button>
+      </div>
+      <div>
+        <h2>Genetic Algorithm!</h2>
+        <p id="run-GA">
+          Run Genetic-Algorithm:
+        </p>
+        <button class="run-button"
+        type="button"
+        id="ga-button"
+        onclick='document.getElementById("run-GA").innerHTML = genetic_algorithm(domain,
+        fitness_function,
+        population_size = 5,
+        STEP,
+        probability_mutation = 0.3,
+        elitism = 0.2,
+        number_generations = 5,
+        search = False
+        )'>
+        genetic algorithm!
+      </button>
+    </div>
+  </body>
+  </html>
+<!--<button type="button" onclick='document.getElementById("nextHeuristic").innerHTML = nextLLheuristic; while x < solution.length'>Next Heuristic !</button>
+<!--TODO: i need nextLLHeuristic to loop till the end 
 of array		TODO: also trigger bubble clicking event with this button-->
 
     <!--
-<button type="button" onclick='document.getElementById("nextHeuristic").innerHTML = nextLLheuristic'>Next Heuristic !</button> <!--TODO: i need nextLLHeuristic to loop till the end 
+        <button type="button" onclick='document.getElementById("nextHeuristic").innerHTML = nextLLheuristic'>Next Heuristic !</button> <!--TODO: i need nextLLHeuristic to loop till the end 
 	of array		TODO: also trigger bubble clicking event with this button-->
 
     <!--
@@ -150,7 +157,3 @@ document.getElementById('gene').setAttribute('value', myvalue);
 	<label for="elementID">Element-ID:</label><br>
 	<input type="text" id="heuristic" name="heuristic"><br>
 </form>
-  
--->
-  </body>
-</html>
