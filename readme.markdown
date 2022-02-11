@@ -17,6 +17,7 @@ var add2 = function(number) {
 }
 ```
 
+## Other genetic algorithm related repositiories:
 
 [services-GA-code](https://github.com/Qutadah/hyperheuristics-evolutionary-algorithms)
 
@@ -24,9 +25,6 @@ var add2 = function(number) {
 ## Known Issues:
 * Genetic Algorithm and search functions are not yet fully implemented. (does not work yet)
 
-
-## Bugs:
--
 
 ## Research papers:
 * This algorithm is based on the research papers of:
