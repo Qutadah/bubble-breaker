@@ -17,8 +17,8 @@ A Javascript Clone of the Windows Mobile Evergreen, coupled with a Genetic Algor
 
 
 ## Known Issues:
-* Genetic Algorithm and search functions are not yet fully implemented. (does not work yet)
-
+* Search functions are not yet defined. (does not work yet)
+* Genetic Algorithm works.
 
 ## Research papers:
 * This algorithm is based on the research papers of:
@@ -38,5 +38,3 @@ A Javascript Clone of the Windows Mobile Evergreen, coupled with a Genetic Algor
   publisher={Wiley Online Library}
   }
   ```
-  
-  
