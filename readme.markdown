@@ -23,8 +23,8 @@ var add2 = function(number) {
 
 
 ## Known Issues:
-* Genetic Algorithm and search functions are not yet fully implemented. (does not work yet)
-
+* Search functions are not yet defined. (does not work yet)
+* Genetic Algorithm works.
 
 ## Research papers:
 * This algorithm is based on the research papers of:
