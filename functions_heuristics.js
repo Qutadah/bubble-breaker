@@ -39,6 +39,23 @@
 
 // ########################################################## SEARCH FUNCTIONS ##############################################################################
 
+function kill(elID) {
+  if (!this.running) {
+    return;
+  }
+  if (el.prop.type) {
+    if (YAHOO.util.Dom.hasClass(el, 'active')) {
+      this.onBubbleKilled.fire();
+      this.killNeighbours(el, el.prop.type);
+    } else if (el.prop) {
+      this.onBubbleclicked.fire();
+      this.uncheckNeighbours();
+      this.checkNeighbours(el, el.prop.type);
+    }
+  }
+  //    console.log(this);
+}
+
 let step_score;
 
 function H01(puzzle_layout) {

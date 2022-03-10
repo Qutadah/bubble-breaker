@@ -4,8 +4,8 @@
 
 // ############## 2. gets random number between two numbers (min, max) ##########
 
-HEURISTICLENGTH = 50;
-HEURISTICNUMBER = 19;
+const HEURISTICLENGTH = 50;
+const HEURISTICNUMBER = 19;
 domain = createDomain();
 const STEP = 3;
 
@@ -87,8 +87,8 @@ function getFitness(solution_x) {
   let score_individual = 0;
   let current_individual = solution_x;
   for (var i = 0; i < current_individual.length; i++) {
-    var current_heuristic = current_individual[i];
-    var heuristic_score_x = heuristic_lookup[current_heuristic];
+    let current_heuristic = current_individual[i];
+    let heuristic_score_x = heuristic_lookup[current_heuristic];
     // console.log(
     //   'current heuristic: ',
     //   current_individual[i],
@@ -107,7 +107,7 @@ function getFitness(solution_x) {
 function createDomain() {
   domain = [];
   x = [1, 19];
-  for (var i = 1; i <= 50; i++) {
+  for (let i = 1; i <= 50; i++) {
     domain.push(x);
   }
   return domain;
@@ -160,8 +160,8 @@ function compareSecondColumn(a, b) {
 }
 
 function getCol(matrix, col) {
-  var column = [];
-  for (var i = 0; i < matrix.length; i++) {
+  let column = [];
+  for (let i = 0; i < matrix.length; i++) {
     column.push(matrix[i][col]);
   }
   return column; // return column data..
@@ -174,10 +174,10 @@ function genetic_algorithm(
   number_generations = 5
   //search = false
 ) {
-  let NUMBERELITISIM = Math.floor(elitism * population_size);
+  const NUMBERELITISIM = Math.floor(elitism * population_size);
 
   let population = [];
-  for (var i = 0; i < population_size; i++) {
+  for (let i = 0; i < population_size; i++) {
     //if (search == True){
     //solution = random_search(domain, fitness_function)
     var solution = start();
@@ -186,7 +186,7 @@ function genetic_algorithm(
   console.log(population);
 
   costs = [];
-  for (var i = 0; i < number_generations; i++) {
+  for (let i = 0; i < number_generations; i++) {
     var population_fitness = [];
 
     if (recon_population) {
@@ -198,24 +198,24 @@ function genetic_algorithm(
       population_fitness.push(getFitness(current_individual)); // fitness of individuals in population as a fitness_list...
     }
 
-    var arrayOfObject = population.map(function (value, index) {
+    let arrayOfObject = population.map(function (value, index) {
       return [value, population_fitness[index]];
     });
 
     arrayOfObject.sort(compareSecondColumn);
 
-    var sliced_population = arrayOfObject.slice(0, NUMBERELITISIM);
+    let sliced_population = arrayOfObject.slice(0, NUMBERELITISIM);
 
-    var pushingArray = getCol(sliced_population, 0);
+    let pushingArray = getCol(sliced_population, 0);
 
     while (pushingArray.length < population_size) {
       if (Math.random() < probability_mutation) {
-        var m = Math.floor(Math.random() * NUMBERELITISIM); //chooses which chromosome i should mutate
+        let m = Math.floor(Math.random() * NUMBERELITISIM); //chooses which chromosome i should mutate
         pushingArray.push(getMutation(sliced_population[m][0])); // push the mutation to populate
       } else {
         do {
-          i1 = Math.abs(Math.floor(Math.random() * NUMBERELITISIM - 1));
-          i2 = Math.abs(Math.floor(Math.random() * NUMBERELITISIM - 1));
+          var i1 = Math.abs(Math.floor(Math.random() * NUMBERELITISIM - 1));
+          var i2 = Math.abs(Math.floor(Math.random() * NUMBERELITISIM - 1));
         } while (i1 == i2);
         pushingArray.push(
           getCrossover(
@@ -233,27 +233,25 @@ function genetic_algorithm(
     current_individual = recon_population[j];
     population_fitness.push(getFitness(current_individual)); // fitness of individuals in population as a fitness_list...
   }
-  var arrayOfObject = recon_population.map(function (value, index) {
+  let arrayOfObject = recon_population.map(function (value, index) {
     return [value, population_fitness[index]];
   });
 
   arrayOfObject.sort(compareSecondColumn);
-  bestIndividual = arrayOfObject[0][0];
-  bestFitness = arrayOfObject[0][1];
+  let bestIndividual = arrayOfObject[0][0];
+  let bestFitness = arrayOfObject[0][1];
   return [bestIndividual, bestFitness];
 }
 
-geneticSolution = genetic_algorithm();
+let geneticSolution = genetic_algorithm();
 
 bestIndividual = geneticSolution[0];
 bestFitness = geneticSolution[1];
 
 console.log(
-  'best solution is given with a fitness of: ',
-  bestFitness,
-  'and the best individual is represented by: ',
-  bestIndividual
+  `best solution is given with a fitness of: ${bestFitness} and the best individual is represented by: ${bestIndividual}`
 );
+
 // -------------------------------------------- EXTRA CODE ----------------------------------------
 
 // ----------------------------------------------- GENETIC --------------------------------------

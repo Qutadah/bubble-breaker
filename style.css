@@ -1,0 +1,107 @@
+<style type="text/css" media="screen">
+body {
+  font-family: verdana, arial, sans-serif;
+  font-size: 0.7em;
+}
+#bubble-breaker {
+  position: relative;
+  margin-top: 30px;
+  margin-left: 30px;
+}
+#bubble-breaker .board {
+  clear: both;
+}
+#bubble-breaker .col {
+  float: left;
+}
+#bubble-breaker .bubble {
+  border: 1px solid transparent;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+}
+#bubble-breaker .active {
+  border: 1px solid black;
+}
+#bubble-breaker .hasActiveNeighbourTop {
+  border-top: 1px solid transparent;
+}
+#bubble-breaker .hasActiveNeighbourRight {
+  border-right: 1px solid transparent;
+}
+#bubble-breaker .hasActiveNeighbourBottom {
+  border-bottom: 1px solid transparent;
+}
+#bubble-breaker .hasActiveNeighbourLeft {
+  border-left: 1px solid transparent;
+}
+#bubble-breaker .green {
+  background-image: url("pics/green.gif");
+}
+#bubble-breaker .purple {
+  background-image: url("pics/purple.gif");
+}
+#bubble-breaker .yellow {
+  background-image: url("pics/yellow.gif");
+}
+#bubble-breaker .red {
+  background-image: url("pics/red.gif");
+}
+#bubble-breaker .blue {
+  background-image: url("pics/blue.gif");
+}
+#bubble-breaker .points {
+  display: none;
+  position: absolute;
+  background-color: black;
+  border: none;
+  color: white;
+  width: 20px;
+  height: 20px;
+  margin-top: -23px;
+  text-align: center;
+  padding: 2px;
+}
+#bubble-breaker div.active {    /* NOTE: selectors used */
+  display: block;
+}
+#bubble-breaker .score {
+  border: 1px solid rgb(0, 102, 255);
+  clear: both;
+  display: inline;
+}
+#bubble-breaker .initiator a {
+  color: red;
+}
+
+.start-div {
+  width: 15em;
+  border: 1px solid #333;
+  box-shadow: 8px 8px 5px #444;
+  padding: 8px 12px;
+  background-image: linear-gradient(180deg, #fff, #ddd 40%, #ccc);
+  position: absolute;
+  top: 80px;
+  left: 320px;}
+
+.next-heuristic-div {
+  width: 15em;
+  border: 1px solid #333;
+  box-shadow: 8px 8px 5px #444;
+  padding: 8px 12px;
+  background-image: linear-gradient(180deg, #fff, #ddd 40%, #ccc);
+  position: absolute;
+  top: 250px;
+  left: 620px;
+}
+
+.ga-div {
+  width: 15em;
+  border: 1px solid #333;
+  box-shadow: 8px 8px 5px #444;
+  padding: 8px 12px;
+  background-image: linear-gradient(180deg, #fff, #ddd 40%, #ccc);
+  position: absolute;
+  top: 250px;
+  left: 920px;}
+</style>

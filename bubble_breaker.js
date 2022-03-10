@@ -19,13 +19,14 @@
  */
 YAHOO.namespace('GINADER.BubbleBreaker');
 YAHOO.GINADER.BubbleBreaker = function (config) {
-  this.config = config;
+  //NOTE: function expression , created bubblebreaker object?
+  this.config = config; // TODO:this is  a global object?? because this is a normal function without method or object.
   this.moduleObj = null;
   this.tiles = [];
   this.activeNeighbours = [];
   this.moduleObj = this.moduleObj = YAHOO.util.Dom.get(this.config.moduleId);
   this.running = false;
-  this.onBubbleclicked = new YAHOO.util.CustomEvent(
+  this.onBubbleclicked = new YAHOO.util.CustomEvent( // NOTE:this is a function call (new keyword)
     'onBubbleclicked',
     this,
     true
@@ -35,7 +36,7 @@ YAHOO.GINADER.BubbleBreaker = function (config) {
     this,
     true
   );
-  this.onInit = new YAHOO.util.CustomEvent('onInit', this, true);
+  this.onInit = new YAHOO.util.CustomEvent('onInit', this, true); //TODO: what is this exactly?
   this.onFinish = new YAHOO.util.CustomEvent('onFinish', this, true);
   this.onEpicWin = new YAHOO.util.CustomEvent('onEpicWin', this, true);
   this.onBubbleclicked.subscribe(this.onclick);
@@ -43,8 +44,9 @@ YAHOO.GINADER.BubbleBreaker = function (config) {
 };
 YAHOO.GINADER.BubbleBreaker.prototype = {
   init: function () {
+    //NOTE: These are methods in green...
     this.setup();
-    this.randomizeBubbles();
+    this.randomizeBubbles(); //NOTE: this points to the object prototype.
     this.score = 0;
     this.running = true;
     this.onInit.fire();
@@ -109,11 +111,16 @@ YAHOO.GINADER.BubbleBreaker.prototype = {
     for (var x = 0; x < this.config.size.x; x++) {
       for (var y = 0; y < this.config.size.y; y++) {
         var el = this.tiles[x][y];
+        //NOTE: added
+        console.log(el.prop);
+        //
         var type = this.getRandomType();
         YAHOO.util.Dom.addClass(el, type);
         el.prop.type = type;
       }
     }
+    // NOTE: added
+    //    console.log(this);
   },
   onclick: function (el) {
     if (!this.running) {
@@ -129,6 +136,7 @@ YAHOO.GINADER.BubbleBreaker.prototype = {
         this.checkNeighbours(el, el.prop.type);
       }
     }
+    //    console.log(this);
   },
   updatePointsDisplay: function () {
     var points =
@@ -270,7 +278,7 @@ YAHOO.GINADER.BubbleBreaker.prototype = {
       this.activeNeighbours.length * (this.activeNeighbours.length - 1);
     this.scoreDisplay.innerHTML = this.score;
 
-    // extract step_score as global variable and use in fitness function.
+    // NOTE: added: extract step_score as global variable and use in fitness function.
     step_score =
       this.activeNeighbours.length * (this.activeNeighbours.length - 1);
     alert('step score ' + step_score + '\n total score ' + this.score);

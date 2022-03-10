@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Bubble Breaker</title>
+    <meta name="author" content="Dirk Ginader" />
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="bubble-breaker"></div>
+    <script src="soundmanager2.js" type="text/javascript"></script>
+    <script src="yahoo-dom-event.js" type="text/javascript"></script>
+    <!--<script type="text/javascript" src="http://yui.yahooapis.com/2.4.1/build/yahoo-dom-event/yahoo-dom-event.js"></script>-->
+    <script src="bubble_breaker.js" type="text/javascript"></script>
+    <script src="genetic_algorithm.js" type="text/javascript"></script>
+    <script src="buttons-genetic.js" type="text/javascript"></script>
+<script type="text/javascript">
+      bubbleBreaker = new YAHOO.GINADER.BubbleBreaker({
+        moduleId: 'bubble-breaker',
+        size: {
+          x: 12,
+          y: 12,
+        },
+        types: ['green', 'purple', 'yellow', 'red', 'blue'],
+        initiateText: 'new Game',
+        debug: true,
+      });
+      //*
+      // Sound Integration
+      soundManager.debugMode = false;
+      soundManager.onload = function () {
+        soundManager.createSound({
+          id: 'initSound',
+          url: 'sounds/dloop.mp3',
+        });
+        soundManager.createSound({
+          id: 'bubbleClickedSound',
+          url: 'sounds/dull-clang.mp3',
+        });
+        soundManager.createSound({
+          id: 'bubbleKilledSound',
+          url: 'sounds/slam.mp3',
+        });
+        soundManager.createSound({
+          id: 'finishSound',
+          url: 'sounds/tap-on-monitor.mp3',
+        });
+        soundManager.createSound({
+          id: 'epicWinSound',
+          url: 'sounds/thunk.mp3',
+        });
+        playInitSound = function () {
+          console.log('playInitSound');
+          soundManager.play('initSound');
+        };
+        playBubbleClickedSound = function () {
+          console.log('playBubbleClickedSound');
+          soundManager.play('bubbleClickedSound');
+        };
+        playBubbleKilledSound = function () {
+          console.log('playBubbleKilledSound');
+          soundManager.play('bubbleKilledSound');
+        };
+        playFinishSound = function () {
+          console.log('playFinishSound');
+          soundManager.play('finishSound');
+        };
+        playEpicWinSound = function () {
+          console.log('playEpicWinSound');
+          soundManager.play('epicWinSound');
+        };
+        bubbleBreaker.onInit.subscribe(playInitSound, this, true);
+        bubbleBreaker.onBubbleclicked.subscribe(
+          playBubbleClickedSound,
+          this,
+          true
+        );
+        bubbleBreaker.onBubbleKilled.subscribe(
+          playBubbleKilledSound,
+          this,
+          true
+        );
+        bubbleBreaker.onFinish.subscribe(playFinishSound, this, true);
+        bubbleBreaker.onEpicWin.subscribe(playEpicWinSound, this, true);
+      };
+      bubbleBreaker.init();
+    </script>
+
+     <!-- #################HTML CODE ############################-->
+    <div class="start-div">
+      <h2>Solve game !</h2>
+      <p>
+        The puzzle will be solved according to the following heuristic
+      </p>
+      <p id="start-guess"> 
+      </p>   
+      <button
+        type="button"
+        onclick='document.getElementById("start-guess").innerHTML = solution'>Start!
+      </button>
+    </div>
+    <div class="next-heuristic-div">
+
+      <h2>Applied Heuristic !</h2>    
+      <p id='applied-heuristic'></p>
+
+      <h2>Next Heuristic !</h2>    
+      <p id="next-heuristic"></p>
+      <button
+        type="button"
+        id="next-heuristic-button"
+        onclick=changeText()>Next !
+
+        <!-- onclick='document.getElementById("next-heuristic").innerHTML = changeText()'> Next heuristic! -->
+      </button>
+      </div>
+      <div class="ga-div">
+        <h2>Genetic Algorithm!</h2>
+        <p id="run-ga">
+          Run Genetic-Algorithm:
+        </p>
+        <button class="run-button"
+        type="button"
+        id="ga-button"
+        onclick='document.getElementById("run-ga").innerHTML = genetic_algorithm(domain,
+        fitness_function,
+        population_size = 5,
+        STEP,
+        probability_mutation = 0.3,
+        elitism = 0.2,
+        number_generations = 5,
+        search = False
+        )'>
+        genetic algorithm!
+      </button>
+    </div>
+  </body>
+  </html>
+<!--<button type="button" onclick='document.getElementById("nextHeuristic").innerHTML = nextLLheuristic; while x < solution.length'>Next Heuristic !</button>
+<!--TODO: i need nextLLHeuristic to loop till the end 
+of array		TODO: also trigger bubble clicking event with this button-->
+
+    <!--
+        <button type="button" onclick='document.getElementById("nextHeuristic").innerHTML = nextLLheuristic'>Next Heuristic !</button> <!--TODO: i need nextLLHeuristic to loop till the end 
+	of array		TODO: also trigger bubble clicking event with this button-->
+
+    <!--
+
+<h2>Individual Gene</h2>
+<form>
+	<label for="elementID">Individual Gene:</label><br>
+	<input type="text" id="gene" name="Gene"><br>
+</form>
+
+
+
+
+
+document.getElementById('gene').setAttribute('value', myvalue);
+
+
+<h3>Low level Heuristic applied</h3>
+<form>
+	<label for="elementID">Element-ID:</label><br>
+	<input type="text" id="heuristic" name="heuristic"><br>
+</form>
