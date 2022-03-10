@@ -8,14 +8,8 @@ A Javascript Clone of the Windows Mobile Evergreen, coupled with a Genetic Algor
 
 ## Requirements:
 
-* Google Chrome or Live-Server on Node.js or from chrome. \
+* Google Chrome or Live-Server on Node.js or from chrome.
 * JavaScript compiler and code editor (VS-code)
-
-```js
-var add2 = function(number) {
-  return number + 2;
-}
-```
 
 ## Other genetic algorithm related repositiories:
 
@@ -23,8 +17,8 @@ var add2 = function(number) {
 
 
 ## Known Issues:
-* Genetic Algorithm and search functions are not yet fully implemented. (does not work yet)
-
+* Search functions are not yet defined. (does not work yet)
+* Genetic Algorithm works.
 
 ## Research papers:
 * This algorithm is based on the research papers of:
@@ -44,5 +38,3 @@ var add2 = function(number) {
   publisher={Wiley Online Library}
   }
   ```
-  
-  
