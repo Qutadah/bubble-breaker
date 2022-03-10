@@ -53,26 +53,26 @@ function start() {
 //}
 
 let heuristic_lookup = {
-  0: (heuristic_score = 10),
-  1: (heuristic_score = 50), // 1: eval('H01(puzzle_layout)'),
-  2: (heuristic_score = 20), // 2: eval('H02(puzzle_layout)'),
-  3: (heuristic_score = 15), // 3: eval('H03(puzzle_layout)'),
-  4: (heuristic_score = 17), // 4: eval('H04(puzzle_layout)'),
-  5: (heuristic_score = 10), // 5: eval('H05(puzzle_layout)'),
-  6: (heuristic_score = 14), // 6: eval('H06(puzzle_layout)'),
-  7: (heuristic_score = 16), // 7: eval('H07(puzzle_layout)'),
-  8: (heuristic_score = 22), // 8: eval('H08(puzzle_layout)'),
-  9: (heuristic_score = 11), // 9: eval('H09(puzzle_layout)'),
-  10: (heuristic_score = 25), // 10: eval('H10(puzzle_layout)'),
-  11: (heuristic_score = 25), // 11: eval('H11(puzzle_layout)'),
-  12: (heuristic_score = 14), // 12: eval('H12(puzzle_layout)'),
-  13: (heuristic_score = 11), // 13: eval('H13(puzzle_layout)'),
-  14: (heuristic_score = 11), // 14: eval('H14(puzzle_layout)'),
-  15: (heuristic_score = 19), // 15: eval('H15(puzzle_layout)'),
-  16: (heuristic_score = 10),
-  17: (heuristic_score = 10),
-  18: (heuristic_score = 10),
-  19: (heuristic_score = 10),
+  0: (heuristicScore = 10),
+  1: (heuristicScore = 50), // 1: eval('H01(puzzle_layout)'),
+  2: (heuristicScore = 20), // 2: eval('H02(puzzle_layout)'),
+  3: (heuristicScore = 15), // 3: eval('H03(puzzle_layout)'),
+  4: (heuristicScore = 17), // 4: eval('H04(puzzle_layout)'),
+  5: (heuristicScore = 10), // 5: eval('H05(puzzle_layout)'),
+  6: (heuristicScore = 14), // 6: eval('H06(puzzle_layout)'),
+  7: (heuristicScore = 16), // 7: eval('H07(puzzle_layout)'),
+  8: (heuristicScore = 22), // 8: eval('H08(puzzle_layout)'),
+  9: (heuristicScore = 11), // 9: eval('H09(puzzle_layout)'),
+  10: (heuristicScore = 25), // 10: eval('H10(puzzle_layout)'),
+  11: (heuristicScore = 25), // 11: eval('H11(puzzle_layout)'),
+  12: (heuristicScore = 14), // 12: eval('H12(puzzle_layout)'),
+  13: (heuristicScore = 11), // 13: eval('H13(puzzle_layout)'),
+  14: (heuristicScore = 11), // 14: eval('H14(puzzle_layout)'),
+  15: (heuristicScore = 19), // 15: eval('H15(puzzle_layout)'),
+  16: (heuristicScore = 10),
+  17: (heuristicScore = 10),
+  18: (heuristicScore = 10),
+  19: (heuristicScore = 10),
   // 16: eval('H16(puzzle_layout)'),
   // 17: eval('H17(puzzle_layout)'),
   // 18: eval('H18(puzzle_layout)'),
@@ -84,22 +84,22 @@ let heuristic_lookup = {
 function getFitness(solution_x) {
   //###### solution argument from GA
 
-  let score_individual = 0;
-  let current_individual = solution_x;
-  for (var i = 0; i < current_individual.length; i++) {
-    let current_heuristic = current_individual[i];
-    let heuristic_score_x = heuristic_lookup[current_heuristic];
+  let scoreIndividual = 0;
+  let currentIndividual = solution_x;
+  for (var i = 0; i < currentIndividual.length; i++) {
+    let currentHeuristic = currentIndividual[i];
+    let heuristicScoreX = heuristic_lookup[currentHeuristic];
     // console.log(
     //   'current heuristic: ',
     //   current_individual[i],
     //   ', heuristic score: ',
     //   heuristic_score_x
     // );
-    score_individual += heuristic_score_x;
+    scoreIndividual += heuristicScoreX;
   }
 
   // console.log('final score of individual', score_individual);
-  return score_individual;
+  return scoreIndividual;
 }
 
 // ############################## 1. Domain ###################################
