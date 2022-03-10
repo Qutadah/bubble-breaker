@@ -1,68 +1,26 @@
 <script type="text/javascript">
-	document.getElementById("button").addEventListener('click', function () {
-	var text = document.getElementById('text');
-	text.value += ' after clicking';
-});
+  document.getElementById('button').addEventListener('click', function () {
+    var text = document.getElementById('text');
+    text.value += ' after clicking';
+  });
 </script>
 
-
-// use a switch case for mapping heuristic function to the array number.
-
-
-python also has a switch case: (match-case) ---- or just use a normal if-elseif syntax.
-
-def f(x):
-    match x:
-        case 'a':
-            return 1
-        case 'b':
-            return 2
-        case _:        
-            return 0   # 0 is the default case if x is not found
-
-
-substitute switch case with objects:
-
-var lookup {
-    h01: function a;
-    h02": "Peter";
-    h03: "Adams";
-    h04: "Adams";
-    h05: "Adams";
-    h06: "Adams";
-    h07: "Adams";
-    h08: "Adams";
-    h09: "Adams";
-    h10: "Adams";
-    h11: "Adams";
-    h12: "Adams";
-    h13: "Adams";
-    h14: "Adams";
-    h15: "Adams";
-    h16: "Adams";
-    h17: "Adams";
-    h18: "Adams";
-    h19: "";
-
-    
-}
-
-result = lookup[""]
-
-
-// an array of objects [ {}, {}, etc...]
-
-// object of objects { {}, {}, {}}
-
-
-// add later to the GA... as a starting random_search function as a start... will give better results.
-
-def random_search(domain, fitness_function):
-  best_cost = sys.maxsize
-  for _ in range(1000):
-    solution = [random.randint(domain[_][0],domain[_][1]) for _ in range(len(domain))]
-    cost = fitness_function(solution)
-    if cost < best_cost:
-      best_cost = cost
-      best_solution = solution
-  return best_solution
+// use a switch case for mapping heuristic function to the array number. python
+also has a switch case: (match-case) ---- or just use a normal if-elseif syntax.
+def f(x): match x: case 'a': return 1 case 'b': return 2 case _: return 0 # 0 is
+the default case if x is not found substitute switch case with objects: var
+lookup { h01: function a; h02": "Peter"; h03: "Adams"; h04: "Adams"; h05:
+"Adams"; h06: "Adams"; h07: "Adams"; h08: "Adams"; h09: "Adams"; h10: "Adams";
+h11: "Adams"; h12: "Adams"; h13: "Adams"; h14: "Adams"; h15: "Adams"; h16:
+"Adams"; h17: "Adams"; h18: "Adams"; h19: ""; } result = lookup[""] // an array
+of objects [ {}, {}, etc...] // object of objects { {}, {}, {}} // add later to
+the GA... as a starting random_search function as a start... will give better
+results. def random_search(domain, fitness_function): best_cost = sys.maxsize
+for _ in range(1000): solution = [random.randint(domain[_][0],domain[_][1]) for
+_ in range(len(domain))] cost = fitness_function(solution) if cost < best_cost:
+best_cost = cost best_solution = solution return best_solution // Object ID :
+var objIdMap=new WeakMap, objectCount = 0; function objectId(object){ if
+(!objIdMap.has(object)) objIdMap.set(object,++objectCount); return
+objIdMap.get(object); } //var o1={}, o2={}, o3={a:1}, o4={a:1}; for (let i in
+bubbleBreaker.tiles.length){ console.log( objectId(bubbleBreaker.tiles[0][1]) )
+// 1 }

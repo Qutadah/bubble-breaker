@@ -17,6 +17,9 @@
  *
  * Version: 1.0
  */
+
+//NOTE; Constructor
+
 YAHOO.namespace('GINADER.BubbleBreaker');
 YAHOO.GINADER.BubbleBreaker = function (config) {
   //NOTE: function expression , created bubblebreaker object?
@@ -52,7 +55,7 @@ YAHOO.GINADER.BubbleBreaker.prototype = {
     this.onInit.fire();
   },
   setup: function () {
-    var that = this;
+    var that = this; //NOTE: this is like self variable to access object in a function call
     var markup = '<div class="board">';
     for (var i = 0; i < this.config.size.x; i++) {
       markup += '<div class="col x' + i + '">';
@@ -86,7 +89,7 @@ YAHOO.GINADER.BubbleBreaker.prototype = {
     )[0].getElementsByTagName('a')[0];
     this.initiator.onclick = function () {
       that.init();
-    };
+    }; //NOTE: change it to arrow function to solve "that"..
     for (var x = 0; x < this.config.size.x; x++) {
       this.tiles[x] = [];
       var col = YAHOO.util.Dom.getElementsByClassName(
@@ -96,9 +99,11 @@ YAHOO.GINADER.BubbleBreaker.prototype = {
       )[0];
       for (var y = 0; y < this.config.size.y; y++) {
         var el = YAHOO.util.Dom.getElementsByClassName('y' + y, null, col)[0];
+        //NOTE;added
+        //        console.log(el);
         el.onclick = function () {
           that.onclick(this);
-        };
+        }; //NOTE: change it to arrow function to solve "that"..
         this.tiles[x][y] = el;
         el.prop = {
           x: x,
@@ -112,7 +117,7 @@ YAHOO.GINADER.BubbleBreaker.prototype = {
       for (var y = 0; y < this.config.size.y; y++) {
         var el = this.tiles[x][y];
         //NOTE: added
-        console.log(el.prop);
+        //console.log(el.prop);
         //
         var type = this.getRandomType();
         YAHOO.util.Dom.addClass(el, type);
@@ -134,6 +139,9 @@ YAHOO.GINADER.BubbleBreaker.prototype = {
         this.onBubbleclicked.fire();
         this.uncheckNeighbours();
         this.checkNeighbours(el, el.prop.type);
+        //NOTE: added
+        //console.log(arguments);
+        //
       }
     }
     //    console.log(this);
@@ -281,7 +289,7 @@ YAHOO.GINADER.BubbleBreaker.prototype = {
     // NOTE: added: extract step_score as global variable and use in fitness function.
     step_score =
       this.activeNeighbours.length * (this.activeNeighbours.length - 1);
-    alert('step score ' + step_score + '\n total score ' + this.score);
+    //alert('step score ' + step_score + '\n total score ' + this.score);
   },
 
   // check which functions are needed for the new puzzle layout after each move!
@@ -387,6 +395,16 @@ YAHOO.GINADER.BubbleBreaker.prototype = {
   log: function (msg) {
     if (this.config.debug && window.console && window.console.log) {
       window.console.log(msg);
+    }
+  },
+
+  //NOTE: Added search function, unstructured
+  search: function () {
+    for (let x = 0; x < 11; x++) {
+      for (let y = 0; y < 11; y++) {
+        bubbleBreaker.onclick(bubbleBreaker.tiles[x][y]);
+        bubbleBreaker.onclick(bubbleBreaker.tiles[x][y]);
+      }
     }
   },
 };
