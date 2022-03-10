@@ -39,40 +39,40 @@
 
 // ########################################################## SEARCH FUNCTIONS ##############################################################################
 
-function kill(elID) {
-  if (!this.running) {
-    return;
-  }
-  if (el.prop.type) {
-    if (YAHOO.util.Dom.hasClass(el, 'active')) {
-      this.onBubbleKilled.fire();
-      this.killNeighbours(el, el.prop.type);
-    } else if (el.prop) {
-      this.onBubbleclicked.fire();
-      this.uncheckNeighbours();
-      this.checkNeighbours(el, el.prop.type);
-    }
-  }
-  //    console.log(this);
+//NOTE: this is the search algorithm that works
+
+// for (let x = 0; x < 11; x++) {
+//   for (let y = 0; y < 11; y++) {
+
+//   }
+// }
+
+// bubbleBreaker.onclick(bubbleBreaker.tiles[x][y]);
+// bubbleBreaker.onclick(bubbleBreaker.tiles[x][y]);
+
+function H01() {
+  bubbleBreaker.onclick(bubbleBreaker.tiles[5][1]);
+  bubbleBreaker.onclick(bubbleBreaker.tiles[5][1]);
+  bubbleBreaker.onclick(bubbleBreaker.tiles[1][0]);
+  bubbleBreaker.onclick(bubbleBreaker.tiles[1][0]);
+  bubbleBreaker.onclick(bubbleBreaker.tiles[8][3]);
+  bubbleBreaker.onclick(bubbleBreaker.tiles[8][3]);
+  return step_score;
 }
 
-let step_score;
+// Clears the smallest set (n >= 2) in Q.
+// search criteria: n_Bubbles
 
-function H01(puzzle_layout) {
-  // Clears the smallest set (n >= 2) in Q.
-  // search criteria: n_Bubbles
+//  for (var i = 0; i < ; i++) {
+// criteria...
+//if(xx[i].score === )
 
-  //  for (var i = 0; i < ; i++) {
-  // criteria...
-  //if(xx[i].score === )
+//}
 
-  //}
-
-  //    clicking(elementID);        // ################# click function call #####################
-  step_score = 1;
-  return step_score; // score of current popped bubble..
-  //do we really need bubble_to_pop?  no just pop and take score..
-}
+//    clicking(elementID);        // ################# click function call #####################
+// step_score = 1;
+// return step_score; // score of current popped bubble..
+// //do we really need bubble_to_pop?  no just pop and take score..
 
 function H02(puzzle_layout) {
   // Clears the smallest set (n >= 2) in Q.

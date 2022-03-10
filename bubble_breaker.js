@@ -399,12 +399,12 @@ YAHOO.GINADER.BubbleBreaker.prototype = {
   },
 
   //NOTE: Added search function, unstructured
-  search: function () {
-    for (let x = 0; x < 11; x++) {
-      for (let y = 0; y < 11; y++) {
-        bubbleBreaker.onclick(bubbleBreaker.tiles[x][y]);
-        bubbleBreaker.onclick(bubbleBreaker.tiles[x][y]);
-      }
-    }
-  },
+  // search: function () {
+  //   for (let x = 0; x < 11; x++) {
+  //     for (let y = 0; y < 11; y++) {
+  //       bubbleBreaker.onclick(bubbleBreaker.tiles[x][y]);
+  //       bubbleBreaker.onclick(bubbleBreaker.tiles[x][y]);
+  //     }
+  //   }
+  // },
 };

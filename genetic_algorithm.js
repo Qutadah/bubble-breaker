@@ -53,7 +53,7 @@ function start() {
 //}
 
 let heuristic_lookup = {
-  0: (heuristicScore = 10),
+  0: eval('H01()'),
   1: (heuristicScore = 50), // 1: eval('H01(puzzle_layout)'),
   2: (heuristicScore = 20), // 2: eval('H02(puzzle_layout)'),
   3: (heuristicScore = 15), // 3: eval('H03(puzzle_layout)'),
@@ -242,15 +242,6 @@ function genetic_algorithm(
   let bestFitness = arrayOfObject[0][1];
   return [bestIndividual, bestFitness];
 }
-
-let geneticSolution = genetic_algorithm();
-
-bestIndividual = geneticSolution[0];
-bestFitness = geneticSolution[1];
-
-console.log(
-  `best solution is given with a fitness of: ${bestFitness} and the best individual is represented by: ${bestIndividual}`
-);
 
 // -------------------------------------------- EXTRA CODE ----------------------------------------
 
